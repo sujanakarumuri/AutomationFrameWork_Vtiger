@@ -79,6 +79,8 @@ public class ProdWithVendorTest extends BaseClass {
 	public void SampleTest()
 	{
 		System.out.println("Sample Test ");
+		System.out.println("Framework");
+		System.out.println("hai");
 	}
 
 }
