@@ -67,12 +67,7 @@
 
 <!-- This dependency will do unit testing to develop the test script-->
 <!-- https://mvnrepository.com/artifact/org.testng/testng --> 
-<dependency>
- <groupId>org.testng</groupId> 
- <artifactId>testng</artifactId>
-  <version>7.4.0</version> 
-  <scope>test</scope>
-   </dependency>
+
    
    <!-- This dependency is for reporting-->
    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports --> 
