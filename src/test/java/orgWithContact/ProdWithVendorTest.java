@@ -76,6 +76,10 @@ public class ProdWithVendorTest extends BaseClass {
 		
 		
 	}
+	public void SampleTest()
+	{
+		System.out.println("Sample Test ");
+	}
 
 }
 
