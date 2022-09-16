@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Qsp</groupId>
+  <artifactId>Com.Sample.Framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+   <dependencies>
+   
+   <!-- This dependency will do unit testing to develop the test script-->
+<!-- https://mvnrepository.com/artifact/org.testng/testng --> 
+<dependency>
+ <groupId>org.testng</groupId> 
+ <artifactId>testng</artifactId>
+  <version>7.4.0</version> 
+  <scope>test</scope>
+   </dependency>
+  
+  <!-- This is for automation-->
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+
+<!-- This is for connection to mysql database-->
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.16</version>
+</dependency>
+
+<!-- This is used to read and write data into excel sheet -->
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>4.1.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>4.1.2</version>
+</dependency>
+
+<!-- This dependency is used for file related operations-->
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.11.0</version>
+</dependency>
+
+<!-- This dependency will automatically upload the updated driver-->
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.0.3</version>
+</dependency>
+
+
+<!-- This dependency will do unit testing to develop the test script-->
+<!-- https://mvnrepository.com/artifact/org.testng/testng --> 
+<dependency>
+ <groupId>org.testng</groupId> 
+ <artifactId>testng</artifactId>
+  <version>7.4.0</version> 
+  <scope>test</scope>
+   </dependency>
+   
+   <!-- This dependency is for reporting-->
+   <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports --> 
+   <dependency>
+    <groupId>com.aventstack</groupId> 
+    <artifactId>extentreports</artifactId>
+     <version>5.0.9</version> 
+   </dependency> 
+
+  </dependencies>
+  
+  <profiles>
+   <profile> 
+   <id>EndToEndScenarioTest</id> 
+   <build>
+    <plugins>
+     <plugin> 
+     <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId> 
+      <version>3.0.0-M7</version>
+       <configuration> 
+       <suiteXmlFiles> 
+       <suiteXmlFile>testng_EndToEndScenarioTest.xml</suiteXmlFile> 
+  </suiteXmlFiles> 
+  </configuration>
+   </plugin> 
+   </plugins>
+    </build>
+     </profile> 
+     
+     <profile> 
+   <id>failed</id> 
+   <build>
+    <plugins>
+     <plugin> 
+     <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId> 
+      <version>3.0.0-M7</version>
+       <configuration> 
+       <suiteXmlFiles> 
+       <suiteXmlFile>testng-failed.xml</suiteXmlFile> 
+  </suiteXmlFiles> 
+  </configuration>
+   </plugin> 
+   </plugins>
+    </build>
+     </profile>
+     
+      <profile> 
+   <id>Smoke</id> 
+   <build>
+    <plugins>
+     <plugin> 
+     <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId> 
+      <version>3.0.0-M7</version>
+       <configuration>
+       <suiteXmlFiles> 
+       <suiteXmlFile>testng_SmokeSuite.xml</suiteXmlFile> 
+  </suiteXmlFiles> 
+  </configuration>
+   </plugin> 
+   </plugins>
+    </build>
+     </profile>
+     
+      
+     
+     
+     
+     
+  </profiles>
+</project>
